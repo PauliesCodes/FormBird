@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,22 @@ namespace FormBird
             InitializeComponent();
         }
 
+        [DllImport("user32.dll")]
+        private static extern int ShowWindow(IntPtr hWnd, int nCmdShow);
+
+        private const int SW_MINIMIZE = 6; // Kód pro minimalizaci
+
+        static void MinimizeAllWindows()
+        {
+            foreach (Process p in Process.GetProcesses())
+            {
+                if (p.MainWindowHandle != IntPtr.Zero) // Ověření, že okno existuje
+                {
+                    ShowWindow(p.MainWindowHandle, SW_MINIMIZE);
+                }
+            }
+        }
+
         Color birdColor = Color.Yellow;
         Color pipe = Color.Green;
 
@@ -26,7 +43,10 @@ namespace FormBird
         Random random = new Random();
         Form bird;
         Form score;
+        Form deathScreen;
+
         Label label;
+        Label label2;
 
         int scoreNum = 0;
 
@@ -61,7 +81,7 @@ namespace FormBird
             }
         }
 
-        private void terminateGame()
+        private void terminateGame(bool byEsc)
         {
             try
             {
@@ -94,6 +114,9 @@ namespace FormBird
 
                 this.Focus();
                 this.WindowState = FormWindowState.Normal;
+
+                if(!byEsc) showDeathScreen();
+
             }
             catch (Exception ex)
             {
@@ -104,6 +127,7 @@ namespace FormBird
 
         private void showScoreMerer()
         {
+
             score = new Form();
             score.Size = new Size(300, 150);
             score.StartPosition = FormStartPosition.Manual;
@@ -128,7 +152,94 @@ namespace FormBird
 
         }
 
+        private void showDeathScreen()
+        {
+            deathScreen = new Form();
+            deathScreen.Size = new Size(400, 400);
+            deathScreen.StartPosition = FormStartPosition.CenterScreen;
+            deathScreen.FormBorderStyle = FormBorderStyle.None;
+            deathScreen.ControlBox = false;
+            deathScreen.ShowInTaskbar = false;
+            deathScreen.BackColor = Color.FromArgb(64, 64, 64);
 
+            Label label = new Label();
+            label.Size = new Size(380, 80);
+            label.Location = new Point(10, 10);
+            label.Text = "You died!";
+            label.Font = new Font("Yu Gothic", 32, FontStyle.Bold);
+            label.ForeColor = Color.White;
+            label.TextAlign = ContentAlignment.MiddleCenter;
+
+            Label label2 = new Label();
+            label2.Size = new Size(380, 50);
+            label2.Location = new Point(10, 100);
+            label2.Text = "Score: " + scoreNum;
+            label2.Font = new Font("Yu Gothic", 24, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+
+            TextBox nameInput = new TextBox();
+            nameInput.Size = new Size(250, 40);
+            nameInput.Location = new Point(75, 170);
+            nameInput.Font = new Font("Yu Gothic", 18, FontStyle.Bold);
+            nameInput.MaxLength = 16;
+            nameInput.TextAlign = HorizontalAlignment.Center;
+
+            // Povolené znaky: A-Z, a-z, 0-9, _, -
+            nameInput.KeyPress += (sender, e) =>
+            {
+                if (!char.IsControl(e.KeyChar) &&
+                    !char.IsLetterOrDigit(e.KeyChar) &&
+                    e.KeyChar != '_' &&
+                    e.KeyChar != '-')
+                {
+                    e.Handled = true; 
+                }
+            };
+
+            Button confirmButton = new Button();
+            confirmButton.Size = new Size(250, 50);
+            confirmButton.Location = new Point(75, 230);
+            confirmButton.Text = "Upload!";
+            confirmButton.Font = new Font("Yu Gothic", 18, FontStyle.Bold);
+            confirmButton.BackColor = System.Drawing.SystemColors.Window;
+            confirmButton.UseVisualStyleBackColor = false;
+            confirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+
+            Button cancelButton = new Button();
+            cancelButton.Size = new Size(250, 50);
+            cancelButton.Location = new Point(75, 290);
+            cancelButton.Text = "Exit";
+            cancelButton.Font = new Font("Yu Gothic", 18, FontStyle.Bold);
+            cancelButton.BackColor = System.Drawing.SystemColors.Window;
+            cancelButton.UseVisualStyleBackColor = false;
+            cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+
+            cancelButton.Click += CancelButton_Click;
+
+            confirmButton.Click += ConfirmButton_Click;
+
+            deathScreen.Controls.Add(label);
+            deathScreen.Controls.Add(label2);
+            deathScreen.Controls.Add(nameInput);
+            deathScreen.Controls.Add(confirmButton);
+            deathScreen.Controls.Add(cancelButton);
+
+            deathScreen.TopMost = true;
+            deathScreen.Show();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+
+            deathScreen.Close();
+
+        }
+
+        private void ConfirmButton_Click(object sender, EventArgs e)
+        {
+            deathScreen.Close();
+        }
 
         private void spawnBird()
         {
@@ -169,7 +280,7 @@ namespace FormBird
             else if (e.KeyCode == Keys.Escape)
             {
 
-                terminateGame();
+                terminateGame(true);
 
             }
 
@@ -203,7 +314,7 @@ namespace FormBird
 
             }
 
-            if (bird.Location.Y > 1080) terminateGame();
+            if (bird.Location.Y > 1080) terminateGame(false);
 
 
         }
@@ -218,7 +329,6 @@ namespace FormBird
             pipeDown.FormBorderStyle = FormBorderStyle.None;
             pipeDown.ControlBox = false;                     
             pipeDown.ShowInTaskbar = false;                  
-            pipeDown.TopMost = true;                         
             pipes.Add(pipeDown);
             pipeDown.Show();
 
@@ -230,7 +340,6 @@ namespace FormBird
             pipeTop.FormBorderStyle = FormBorderStyle.None;  
             pipeTop.ControlBox = false;                      
             pipeTop.ShowInTaskbar = false;                   
-            pipeTop.TopMost = true;                          
             pipes.Add(pipeTop);
             pipeTop.Show();
         }
@@ -253,11 +362,19 @@ namespace FormBird
                 if (bird.Bounds.IntersectsWith(pipes[i].Bounds))
                 {
 
-                    terminateGame();
+                    terminateGame(false);
 
                 }
 
             }
+
+            if(bird != null && bird.Location.Y <= 0)
+            {
+
+                terminateGame(false);
+
+            }
+
         }
 
         private void isPipeInEnd(Form pipe, List<Form> pipes)
@@ -278,6 +395,9 @@ namespace FormBird
         {
             gravityAdder = 0;
             scoreNum = 0;
+
+            if(deathScreen != null) deathScreen.Close();
+            MinimizeAllWindows();
 
             this.WindowState = FormWindowState.Minimized;
             createPipe(random.Next(1, 4) * 100, 900);
@@ -333,7 +453,17 @@ namespace FormBird
 
         private void clear_Button_Click(object sender, EventArgs e)
         {
-            terminateGame();
+            terminateGame(true);
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            showDeathScreen();
         }
     }
 }

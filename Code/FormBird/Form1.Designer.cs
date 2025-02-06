@@ -40,6 +40,7 @@
             this.bird_color_PictureBox = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.clear_Button = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.url_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gitHub_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipe_color_PictureBox)).BeginInit();
@@ -51,7 +52,7 @@
             this.title_Label.AutoSize = true;
             this.title_Label.Font = new System.Drawing.Font("Yu Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.title_Label.ForeColor = System.Drawing.Color.White;
-            this.title_Label.Location = new System.Drawing.Point(21, 23);
+            this.title_Label.Location = new System.Drawing.Point(26, 23);
             this.title_Label.Name = "title_Label";
             this.title_Label.Size = new System.Drawing.Size(339, 82);
             this.title_Label.TabIndex = 0;
@@ -97,7 +98,7 @@
             this.url_PictureBox.BackColor = System.Drawing.Color.Transparent;
             this.url_PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.url_PictureBox.Image = global::FormBird.Properties.Resources.urrll_removebg_preview;
-            this.url_PictureBox.Location = new System.Drawing.Point(270, 235);
+            this.url_PictureBox.Location = new System.Drawing.Point(266, 243);
             this.url_PictureBox.Margin = new System.Windows.Forms.Padding(5);
             this.url_PictureBox.Name = "url_PictureBox";
             this.url_PictureBox.Size = new System.Drawing.Size(50, 50);
@@ -111,7 +112,7 @@
             this.gitHub_PictureBox.BackColor = System.Drawing.Color.Transparent;
             this.gitHub_PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.gitHub_PictureBox.Image = global::FormBird.Properties.Resources.github__1_;
-            this.gitHub_PictureBox.Location = new System.Drawing.Point(326, 235);
+            this.gitHub_PictureBox.Location = new System.Drawing.Point(326, 243);
             this.gitHub_PictureBox.Margin = new System.Windows.Forms.Padding(5);
             this.gitHub_PictureBox.Name = "gitHub_PictureBox";
             this.gitHub_PictureBox.Size = new System.Drawing.Size(50, 50);
@@ -150,7 +151,7 @@
             this.clear_Button.BackColor = System.Drawing.SystemColors.Window;
             this.clear_Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.clear_Button.Font = new System.Drawing.Font("Yu Gothic", 24F, System.Drawing.FontStyle.Bold);
-            this.clear_Button.Location = new System.Drawing.Point(194, 108);
+            this.clear_Button.Location = new System.Drawing.Point(198, 108);
             this.clear_Button.Name = "clear_Button";
             this.clear_Button.Size = new System.Drawing.Size(146, 58);
             this.clear_Button.TabIndex = 8;
@@ -158,12 +159,26 @@
             this.clear_Button.UseVisualStyleBackColor = false;
             this.clear_Button.Click += new System.EventHandler(this.clear_Button_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Window;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Yu Gothic", 24F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(206, 172);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(146, 58);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "CLEAR";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(381, 290);
+            this.ClientSize = new System.Drawing.Size(384, 301);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.clear_Button);
             this.Controls.Add(this.url_PictureBox);
             this.Controls.Add(this.gitHub_PictureBox);
@@ -178,6 +193,7 @@
             this.MaximizeBox = false;
             this.Name = "MainMenu";
             this.Text = "FormBird";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.url_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gitHub_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipe_color_PictureBox)).EndInit();
@@ -199,6 +215,7 @@
         private System.Windows.Forms.PictureBox url_PictureBox;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button clear_Button;
+        private System.Windows.Forms.Button button1;
     }
 }
 
