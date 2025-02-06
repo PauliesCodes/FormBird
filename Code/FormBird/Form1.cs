@@ -108,19 +108,18 @@ namespace FormBird
             score.Size = new Size(300, 150);
             score.StartPosition = FormStartPosition.Manual;
             score.Location = new Point(1920 - 300, 0);
-            score.FormBorderStyle = FormBorderStyle.None; 
-            score.ControlBox = false;                      
-            score.ShowInTaskbar = false;                   
+            score.FormBorderStyle = FormBorderStyle.None;
+            score.ControlBox = false;
+            score.ShowInTaskbar = false;
             score.BackColor = Color.FromArgb(64, 64, 64);
 
             label = new Label();
             label.Size = new Size(300, 120);
             label.Text = "Score: 0";
-            label.Font = new Font("Yu Gothic", 48, FontStyle.Bold); 
-            label.ForeColor = Color.White; 
-            label.TextAlign = ContentAlignment.MiddleCenter; 
+            label.Font = new Font("Yu Gothic", 48, FontStyle.Bold);
+            label.ForeColor = Color.White;
+            label.TextAlign = ContentAlignment.MiddleCenter;
             label.Dock = DockStyle.Fill;
-
 
             score.Controls.Add(label);
             score.Show();
@@ -128,6 +127,7 @@ namespace FormBird
             score.TopMost = true;
 
         }
+
 
 
         private void spawnBird()
@@ -328,6 +328,7 @@ namespace FormBird
 
             moveBird();
             checkIfBirdHitPipe();
+
         }
 
         private void clear_Button_Click(object sender, EventArgs e)
