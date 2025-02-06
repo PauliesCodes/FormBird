@@ -62,6 +62,8 @@ namespace FormBird
         int gravityAdder = 0;
         int jumpAdder = 0;
 
+        int speedFactor = 5;
+
         private void bird_color_PictureBox_Click(object sender, EventArgs e)
         {
             using (ColorDialog colorDialog = new ColorDialog())
@@ -389,13 +391,13 @@ namespace FormBird
         }
 
 
-        private void movePipe(Form pipe, int jakMoc)
+        private void movePipe(Form pipe, int speedFactor)
         {
 
-            pipe.Location = new Point(pipe.Location.X - jakMoc, pipe.Location.Y);
-
+            pipe.Location = new Point(pipe.Location.X - speedFactor, pipe.Location.Y);
 
         }
+
 
         private void checkIfBirdHitPipe()
         {
@@ -473,6 +475,11 @@ namespace FormBird
         private void timer1_Tick(object sender, EventArgs e)
         {
             bird.Focus();
+
+            if (scoreNum / 2 % 10 == 0 && scoreNum > 0) 
+            {
+                speedFactor++;  
+            }
 
             for (int i = 0; i < pipes.Count; i++)
             {
