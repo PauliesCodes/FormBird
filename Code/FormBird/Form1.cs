@@ -238,7 +238,9 @@ namespace FormBird
 
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
+
             deathScreen.Close();
+            CustomMessageBox.ShowMessage();
         }
 
         private void spawnBird()
