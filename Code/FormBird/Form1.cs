@@ -9,6 +9,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Xml.Linq;
+using MySql.Data.MySqlClient;
 
 namespace FormBird
 {
@@ -47,6 +50,8 @@ namespace FormBird
 
         Label label;
         Label label2;
+
+        TextBox nameInput;
 
         int scoreNum = 0;
 
@@ -178,7 +183,7 @@ namespace FormBird
             label2.ForeColor = Color.White;
             label2.TextAlign = ContentAlignment.MiddleCenter;
 
-            TextBox nameInput = new TextBox();
+            nameInput = new TextBox();
             nameInput.Size = new Size(250, 40);
             nameInput.Location = new Point(75, 170);
             nameInput.Font = new Font("Yu Gothic", 18, FontStyle.Bold);
@@ -238,9 +243,40 @@ namespace FormBird
 
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
+            //  $servername = "localhost"; sql.endora.cz:3307
+            //$username = "client";
+            //$password = "12Client3";
+            //$dbname = "formbirddata";
 
-            deathScreen.Close();
-            CustomMessageBox.ShowMessage();
+            string connectionString = "Server=sql.endora.cz;Port=3307;Database=formbirddata;User Id=client;Password=12Client3;";
+
+            string query = "INSERT INTO score (score, name, date) VALUES (@score, @name, @date)";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        // Nahraď tyto hodnoty skutečnými daty
+                        cmd.Parameters.AddWithValue("@score", scoreNum);  // Například skóre 100
+                        cmd.Parameters.AddWithValue("@name", nameInput.Text);
+                        cmd.Parameters.AddWithValue("@date", DateTime.Now);
+
+                        cmd.ExecuteNonQuery();
+
+                        deathScreen.Close();
+                        CustomMessageBox.ShowMessage();
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Something went wrong :( If the problem persists, contact me at email: paulasm.06@spst.eu\n\n",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
         }
 
         private void spawnBird()
@@ -461,11 +497,6 @@ namespace FormBird
         private void MainMenu_Load(object sender, EventArgs e)
         {
             this.StartPosition = FormStartPosition.CenterScreen;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            showDeathScreen();
         }
     }
 }

@@ -40,7 +40,6 @@
             this.bird_color_PictureBox = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.clear_Button = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.url_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gitHub_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipe_color_PictureBox)).BeginInit();
@@ -159,26 +158,12 @@
             this.clear_Button.UseVisualStyleBackColor = false;
             this.clear_Button.Click += new System.EventHandler(this.clear_Button_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Window;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Yu Gothic", 24F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(206, 172);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 58);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "CLEAR";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(384, 301);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.clear_Button);
             this.Controls.Add(this.url_PictureBox);
             this.Controls.Add(this.gitHub_PictureBox);
@@ -215,7 +200,6 @@
         private System.Windows.Forms.PictureBox url_PictureBox;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button clear_Button;
-        private System.Windows.Forms.Button button1;
     }
 }
 
