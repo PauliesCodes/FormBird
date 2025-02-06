@@ -1,0 +1,11 @@
+G:\FormBird\FormBird\Code\FormBird\bin\Debug\FormBird.exe.config
+G:\FormBird\FormBird\Code\FormBird\bin\Debug\FormBird.exe
+G:\FormBird\FormBird\Code\FormBird\bin\Debug\FormBird.pdb
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.csproj.AssemblyReference.cache
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.csproj.SuggestedBindingRedirects.cache
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.MainMenu.resources
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.Properties.Resources.resources
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.csproj.GenerateResource.cache
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.csproj.CoreCompileInputs.cache
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.exe
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.pdb
