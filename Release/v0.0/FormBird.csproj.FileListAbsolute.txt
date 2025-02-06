@@ -1,0 +1,54 @@
+G:\FormBird\FormBird\Code\FormBird\bin\Debug\FormBird.exe.config
+G:\FormBird\FormBird\Code\FormBird\bin\Debug\FormBird.exe
+G:\FormBird\FormBird\Code\FormBird\bin\Debug\FormBird.pdb
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.csproj.AssemblyReference.cache
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.csproj.SuggestedBindingRedirects.cache
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.MainMenu.resources
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.Properties.Resources.resources
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.csproj.GenerateResource.cache
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.csproj.CoreCompileInputs.cache
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.exe
+G:\FormBird\FormBird\Code\FormBird\obj\Debug\FormBird.pdb
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\FormBird.exe.config
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\FormBird.exe
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\FormBird.pdb
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\BouncyCastle.Cryptography.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\Google.Protobuf.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\K4os.Compression.LZ4.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\K4os.Compression.LZ4.Streams.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\K4os.Hash.xxHash.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\MySql.Data.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.Buffers.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.Configuration.ConfigurationManager.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.IO.Pipelines.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.Memory.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.Numerics.Vectors.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.Threading.Tasks.Extensions.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\ZstdSharp.dll
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\BouncyCastle.Cryptography.xml
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\Google.Protobuf.pdb
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\Google.Protobuf.xml
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\K4os.Compression.LZ4.xml
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\K4os.Compression.LZ4.Streams.xml
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\K4os.Hash.xxHash.xml
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\MySql.Data.xml
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.Buffers.xml
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.Configuration.ConfigurationManager.xml
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.IO.Pipelines.xml
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.Memory.xml
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.Numerics.Vectors.xml
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\System.Threading.Tasks.Extensions.xml
+Z:\Games - VS\FormBird\Code\FormBird\obj\Debug\FormBird.csproj.AssemblyReference.cache
+Z:\Games - VS\FormBird\Code\FormBird\obj\Debug\FormBird.MainMenu.resources
+Z:\Games - VS\FormBird\Code\FormBird\obj\Debug\FormBird.Properties.Resources.resources
+Z:\Games - VS\FormBird\Code\FormBird\obj\Debug\FormBird.csproj.GenerateResource.cache
+Z:\Games - VS\FormBird\Code\FormBird\obj\Debug\FormBird.csproj.CoreCompileInputs.cache
+Z:\Games - VS\FormBird\Code\FormBird\obj\Debug\FormBird.csproj.CopyComplete
+Z:\Games - VS\FormBird\Code\FormBird\obj\Debug\FormBird.exe
+Z:\Games - VS\FormBird\Code\FormBird\obj\Debug\FormBird.pdb

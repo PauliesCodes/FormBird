@@ -52,3 +52,7 @@ Z:\Games - VS\FormBird\Code\FormBird\obj\Debug\FormBird.csproj.CoreCompileInputs
 Z:\Games - VS\FormBird\Code\FormBird\obj\Debug\FormBird.csproj.CopyComplete
 Z:\Games - VS\FormBird\Code\FormBird\obj\Debug\FormBird.exe
 Z:\Games - VS\FormBird\Code\FormBird\obj\Debug\FormBird.pdb
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\FormBird.exe.manifest
+Z:\Games - VS\FormBird\Code\FormBird\bin\Debug\FormBird.application
+Z:\Games - VS\FormBird\Code\FormBird\obj\Debug\FormBird.exe.manifest
+Z:\Games - VS\FormBird\Code\FormBird\obj\Debug\FormBird.application
