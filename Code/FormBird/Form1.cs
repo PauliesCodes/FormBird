@@ -245,15 +245,11 @@ namespace FormBird
 
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
-            //  $servername = "localhost"; sql.endora.cz:3307
-            //$username = "client";
-            //$password = "12Client3";
-            //$dbname = "formbirddata";
 
             if(nameInput.Text.Length > 3)
             {
 
-                string connectionString = "Server=sql.endora.cz;Port=3307;Database=formbirddata;User Id=client;Password=12Client3;";
+                string connectionString = "Server=sql.endora.cz;Port=3307;Database=;User Id=;Password=;";
 
                 string query = "INSERT INTO score (score, name, date) VALUES (@score, @name, @date)";
 
