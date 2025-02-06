@@ -178,7 +178,7 @@ namespace FormBird
             Label label2 = new Label();
             label2.Size = new Size(380, 50);
             label2.Location = new Point(10, 100);
-            label2.Text = "Score: " + scoreNum;
+            label2.Text = "Score: " + scoreNum/2;
             label2.Font = new Font("Yu Gothic", 24, FontStyle.Bold);
             label2.ForeColor = Color.White;
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -248,33 +248,39 @@ namespace FormBird
             //$password = "12Client3";
             //$dbname = "formbirddata";
 
-            string connectionString = "Server=sql.endora.cz;Port=3307;Database=formbirddata;User Id=client;Password=12Client3;";
-
-            string query = "INSERT INTO score (score, name, date) VALUES (@score, @name, @date)";
-
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            if(nameInput.Text.Length > 3)
             {
-                try
+
+                string connectionString = "Server=sql.endora.cz;Port=3307;Database=formbirddata;User Id=client;Password=12Client3;";
+
+                string query = "INSERT INTO score (score, name, date) VALUES (@score, @name, @date)";
+
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
-                    conn.Open();
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    try
                     {
-                        // Nahraď tyto hodnoty skutečnými daty
-                        cmd.Parameters.AddWithValue("@score", scoreNum);  // Například skóre 100
-                        cmd.Parameters.AddWithValue("@name", nameInput.Text);
-                        cmd.Parameters.AddWithValue("@date", DateTime.Now);
+                        conn.Open();
+                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        {
+                            // Nahraď tyto hodnoty skutečnými daty
+                            cmd.Parameters.AddWithValue("@score", (scoreNum / 2));  // Například skóre 100
+                            cmd.Parameters.AddWithValue("@name", nameInput.Text);
+                            cmd.Parameters.AddWithValue("@date", DateTime.Now);
 
-                        cmd.ExecuteNonQuery();
+                            cmd.ExecuteNonQuery();
 
-                        deathScreen.Close();
-                        CustomMessageBox.ShowMessage();
+                            deathScreen.Close();
+                            CustomMessageBox.ShowMessage();
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Something went wrong :( If the problem persists, contact me at email: paulasm.06@spst.eu\n\n",
+                                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch (Exception)
-                {
-                    MessageBox.Show("Something went wrong :( If the problem persists, contact me at email: paulasm.06@spst.eu\n\n",
-                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+
+
             }
 
         }
@@ -459,7 +465,7 @@ namespace FormBird
         {
             Process.Start(new ProcessStartInfo
             {
-                FileName = "https://paulas-michal.mzf.cz/",
+                FileName = "https://paulas-michal.mzf.cz/FormBird/",
                 UseShellExecute = true 
             });
         }
