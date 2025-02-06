@@ -454,7 +454,7 @@ namespace FormBird
         {
             Process.Start(new ProcessStartInfo
             {
-                FileName = "https://github.com/PauliesCodes",
+                FileName = "https://github.com/PauliesCodes/FormBird",
                 UseShellExecute = true 
             });
         }
