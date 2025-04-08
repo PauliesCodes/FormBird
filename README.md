@@ -4,7 +4,7 @@
 
 **FormBird** je jednoduchá, zábavná arkádová hra inspirovaná klasikou, kde hráč ovládá ptáka, který se musí vyhnout překážkám (trubkám), a sbírat skóre. Hra se vyznačuje jednoduchým ovládáním, kde jediným pohybem, který je potřeba ovládat, je **skok** (pomocí mezerníku).
 
-**[Stáhnout zde!]([https://example.com](https://paulas-michal.mzf.cz/FormBird/))**
+[Stáhnout zde!]([https://example.com](https://paulas-michal.mzf.cz/FormBird/))
 
 
 ## Jak to funguje
